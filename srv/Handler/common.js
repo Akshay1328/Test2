@@ -30,7 +30,7 @@ async function LoggError(tx, sr_no, payload, srvName, error){
 
 
 const MandatoryFields = {
-    "MIG_INC_T_INCDT" : ['DOB', 'NAME', 'JOBID']
+    "MIG_INC_T_INCDT" : ['SR_NO', 'NAME', 'JOBID']
 };
 
 async function checkMandatory(tx, FieldName, payload, TemplateName, dType){
