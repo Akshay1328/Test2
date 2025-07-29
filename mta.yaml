@@ -25,6 +25,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: GitHubTest-db
+      - name: GitHubTest-auth
 
   - name: GitHubTest-db-deployer
     type: hdb
@@ -40,3 +41,12 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: GitHubTest-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: GitHubTest-${org}-${space}
+        tenant-mode: dedicated

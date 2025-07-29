@@ -1,16 +1,5 @@
-// type json {
-
-// status: String;
-
-// message: String;
-
-// }
-
-
-// using { createIncidentDetails } from './Handle/Load';
-
-service Migrate{
-
-function createIncidentDetails() returns String;
-
+service Migrate {
+    function createIncidentDetails() returns String;
+    function JobScheduleIncident()   returns String;
+    function CreateValidationReport() returns String;
 }
